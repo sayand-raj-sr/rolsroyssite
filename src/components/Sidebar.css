@@ -1,0 +1,141 @@
+.luxury-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 100vh;
+  background-color: var(--bg-darker);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+  z-index: 100;
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow: hidden;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.luxury-sidebar:hover {
+  width: 240px;
+}
+
+.sidebar-brand {
+  margin-bottom: 60px;
+}
+
+.sidebar-logo {
+  width: 45px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-sidebar:hover .sidebar-logo {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  color: var(--text-secondary);
+  position: relative;
+  transition: var(--transition-smooth);
+  width: 240px;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: var(--vapour-violet);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background-color: rgba(61, 28, 74, 0.2);
+}
+
+.nav-link:hover::before {
+  transform: scaleY(1);
+}
+
+.nav-icon {
+  min-width: 20px;
+  margin-right: 20px;
+  color: inherit;
+}
+
+.nav-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.luxury-sidebar:hover .nav-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sidebar-footer {
+  width: 100%;
+  margin-top: auto;
+}
+
+.whispers-login {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  width: 240px;
+  color: var(--vapour-violet);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  font-family: inherit;
+}
+
+.whispers-login:hover {
+  background: rgba(191, 165, 214, 0.1);
+  color: var(--vapour-violet-light);
+}
+
+.login-icon {
+  min-width: 18px;
+  margin-right: 22px;
+}
+
+.login-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.luxury-sidebar:hover .login-text {
+  opacity: 1;
+  transform: translateX(0);
+}

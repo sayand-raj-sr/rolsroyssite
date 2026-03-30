@@ -1,0 +1,157 @@
+.hero-scroll-container {
+  height: 500vh; /* Extremely tall to allow a slow, graceful 240 frame scroll */
+  width: 100%;
+  position: relative;
+  background-color: var(--bg-dark);
+}
+
+.hero-sticky-viewport {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.hero-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.overlay-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 5, 5, 0.4) 0%,
+    rgba(5, 5, 5, 0.1) 40%,
+    rgba(5, 5, 5, 0.2) 60%,
+    rgba(5, 5, 5, 0.8) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.feature-text {
+  position: absolute;
+  z-index: 3;
+  color: #fff;
+  padding: 0 5%;
+  max-width: 600px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+}
+
+.feature-text h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 0.15em;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ffffff 0%, var(--vapour-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.feature-text p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Feature 1 appears early on the left */
+.feature-text-1 {
+  top: 30%;
+  left: 5%;
+}
+
+/* Feature 2 appears slightly lower on the right */
+.feature-text-2 {
+  top: 40%;
+  right: 5%;
+  text-align: right;
+  margin-left: auto;
+}
+
+/* Feature 3 on the left */
+.feature-text-3 {
+  top: 35%;
+  left: 5%;
+}
+
+/* Feature 4 centered */
+.feature-text-4 {
+  top: 45%;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Final Title Wrapper */
+.final-hero-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 4;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  color: var(--vapour-violet);
+  letter-spacing: 0.3em;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 6rem;
+  color: var(--text-primary);
+  letter-spacing: 0.15em;
+  text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .feature-text h2 {
+    font-size: 2rem;
+  }
+  .feature-text {
+    left: 5% !important;
+    right: 5% !important;
+    text-align: left !important;
+    max-width: 90%;
+  }
+  .feature-text-2 {
+    text-align: right !important;
+  }
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}
