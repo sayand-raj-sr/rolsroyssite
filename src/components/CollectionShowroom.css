@@ -117,11 +117,33 @@
   box-shadow: 0 0 20px rgba(197, 163, 93, 0.4);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
+  .showroom-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
   .showroom-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
+  
+  .showroom-header {
+    margin-bottom: 40px;
+  }
+
+  .showroom-card-content {
+    padding: 20px;
+  }
+
   .showroom-card-content h3 {
     font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .showroom-title {
+    font-size: 1.8rem;
   }
 }

@@ -250,8 +250,93 @@
   transform: scale(1.05);
 }
 
+@media (max-width: 1200px) {
+  .technical-grid {
+    gap: 20px;
+    padding: 0 20px;
+  }
+}
+
 @media (max-width: 1024px) {
   .technical-grid {
     grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+
+  .tech-card {
+    height: 500px;
+  }
+
+  .spec-value {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .technical-section {
+    padding: 80px 20px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .tech-card {
+    height: 450px;
+  }
+
+  .card-content {
+    top: 25px;
+    left: 25px;
+  }
+
+  .car-name {
+    font-size: 2rem;
+  }
+
+  .specs-container {
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .spec-value {
+    font-size: 2.2rem;
+  }
+
+  .spec-unit {
+    font-size: 0.9rem;
+  }
+
+  .spec-label {
+    font-size: 0.7rem;
+  }
+
+  .spec-divider {
+    height: 60px;
+  }
+
+  .discover-btn {
+    padding: 12px 30px;
+    font-size: 0.7rem;
+  }
+
+  .main-explore-btn {
+    padding: 15px 40px;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-card {
+    height: 400px;
+  }
+
+  .specs-container {
+    gap: 15px;
+  }
+
+  .spec-value {
+    font-size: 1.8rem;
   }
 }

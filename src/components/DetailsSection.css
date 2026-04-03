@@ -80,13 +80,14 @@
   line-height: 1.1;
   margin-bottom: 2rem;
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+  background-clip: text;
 }
 
 .story-paragraph {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-size: clamp(1rem, 2vw, 1.4rem);
   color: var(--text-secondary);
-  line-height: 1.8;
+  line-height: 1.6;
   max-width: 650px;
   margin: 0 auto;
   font-weight: 300;
@@ -99,6 +100,7 @@
   font-weight: 300;
   background: linear-gradient(180deg, #ffffff 20%, var(--vapour-violet) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 20px rgba(138, 99, 210, 0.4));
   margin-bottom: 1.5rem;
@@ -106,14 +108,14 @@
 }
 
 .cta-button {
-  margin-top: 3.5rem;
-  padding: 16px 45px;
+  margin-top: 3rem;
+  padding: 14px 40px;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.4);
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.4s var(--easing-rr);
   position: relative;
@@ -128,7 +130,39 @@
 }
 
 @media (max-width: 768px) {
+  .details-container {
+    height: 500vh; /* More scroll space for mobile */
+  }
+
   .story-block {
-    padding: 0 20px;
+    padding: 0 30px;
+    width: 100%;
+    transform: none !important; /* Let's keep it centered on mobile */
+  }
+
+  .story-subtext {
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    margin-bottom: 1rem;
+  }
+
+  .story-heading {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .story-paragraph {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .story-price {
+    font-size: 3rem;
+  }
+
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 0.75rem;
+    margin-top: 2rem;
   }
 }
