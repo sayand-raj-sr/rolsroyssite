@@ -1,67 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap');
+
 :root {
-  --purple-spirit: #3d1c4a;
-  --purple-spirit-light: #522765;
-  --vapour-violet: #bfa5d6;
-  --vapour-violet-light: #dbcced;
-  
-  --bg-dark: #050505;
-  --bg-darker: #020202;
-  --bg-card: #0d0d0d;
-  --bg-card-hover: #141414;
-  
+  --bg-primary: #050505;
+  --bg-secondary: #0a0a0a;
+  --bg-surface: #121212;
+  --accent: #00f2ff;
+  --accent-glow: rgba(0, 242, 255, 0.5);
   --text-primary: #ffffff;
   --text-secondary: #a0a0a0;
-  
-  --transition-smooth: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  --transition-fast: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --card-border: rgba(255, 255, 255, 0.1);
+  --glass: rgba(255, 255, 255, 0.03);
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-body);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography tokens */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif; /* Simulating luxury serif */
-  font-weight: 400;
-  letter-spacing: 0.05em;
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
-/* Custom scrollbar to match the style */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-darker);
+  background: var(--bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--purple-spirit);
-  border-radius: 4px;
+  background: #333;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--vapour-violet);
+  background: var(--accent);
 }
 
-/* Magic Carpet Ride smooth scrolling */
-html {
-  scroll-behavior: smooth;
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.magnetic-wrap {
+  display: inline-block;
+  position: relative;
+}
+
+.neon-btn {
+  padding: 1rem 2.5rem;
+  background: var(--accent);
+  color: #000;
+  font-weight: 800;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.neon-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.neon-btn:hover::before {
+  left: 100%;
+}
+
+.neon-btn:hover {
+  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-2px);
 }

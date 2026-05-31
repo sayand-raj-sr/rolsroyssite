@@ -1,31 +1,40 @@
-import React, { useState } from 'react';
-import Sidebar from './components/Sidebar';
-import HeroSection from './components/HeroSection';
-import DetailsSection from './components/DetailsSection';
-import TechnicalGrid from './components/TechnicalGrid';
-import CollectionShowroom from './components/CollectionShowroom';
-import './App.css';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import FeaturedProducts from './components/FeaturedProducts';
+import Categories from './components/Categories';
+import TechnicalSpecs from './components/TechnicalSpecs';
+import Newsletter from './components/Newsletter';
+import Footer from './components/Footer';
+import './index.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const [isCollectionVisible, setCollectionVisible] = useState(false);
+  const mainRef = useRef(null);
 
-  const toggleCollection = () => {
-    setCollectionVisible(true);
-    // Scroll to the collection after it is potentially rendered
-    setTimeout(() => {
-      document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  };
+  useEffect(() => {
+    // Custom cursor movement if needed
+    const ctx = gsap.context(() => {
+      // Smooth scroll or general entrance animations can go here
+    }, mainRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <div className="app-container">
-      <Sidebar />
-      <main className="main-content">
-        <HeroSection />
-        <DetailsSection />
-        <TechnicalGrid onExplore={toggleCollection} />
-        {isCollectionVisible && <CollectionShowroom isOpen={isCollectionVisible} />}
+    <div ref={mainRef} className="app-container">
+      <Navbar />
+      <main>
+        <Hero />
+        <Categories />
+        <FeaturedProducts />
+        <TechnicalSpecs />
+        <Newsletter />
       </main>
+      <Footer />
     </div>
   );
 }
